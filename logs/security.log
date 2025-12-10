@@ -1,0 +1,208 @@
+2025-12-08 11:08:45 - [AUDIT] - USER: Admin | ACTION: REGISTER | DETAILS: New user role: admin
+2025-12-08 11:08:47 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:09:08 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: Produit: Iphone
+2025-12-08 11:09:31 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: Produit: PC
+2025-12-08 11:09:53 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: Produit: 
+2025-12-08 11:13:49 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Mauvais mot de passe
+2025-12-08 11:14:00 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:14:07 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: Produit: a
+2025-12-08 11:15:01 - [AUDIT] - USER: Admin | ACTION: DELETE_PRODUCT | DETAILS: ID: 4
+2025-12-08 11:15:04 - [AUDIT] - USER: Admin | ACTION: DELETE_PRODUCT | DETAILS: ID: 3
+2025-12-08 11:16:49 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:17:05 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: Produit: Iphone
+2025-12-08 11:17:11 - [AUDIT] - USER: Admin | ACTION: UPDATE_STOCK | DETAILS: ID: 1 | Var: -5
+2025-12-08 11:18:09 - [AUDIT] - USER: Admin | ACTION: LOGOUT | DETAILS: Déconnexion utilisateur
+2025-12-08 11:18:32 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Mauvais mot de passe
+2025-12-08 11:18:44 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:18:56 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: Produit: PC
+2025-12-08 11:19:04 - [AUDIT] - USER: Admin | ACTION: UPDATE_STOCK | DETAILS: ID: 2 | Var: -100
+2025-12-08 11:19:11 - [AUDIT] - USER: Admin | ACTION: UPDATE_STOCK | DETAILS: ID: 2 | Var: 1000
+2025-12-08 11:24:10 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:24:16 - [AUDIT] - USER: Admin | ACTION: UPDATE_STOCK | DETAILS: ID: 2 | Var: -1000
+2025-12-08 11:29:03 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:30:22 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:30:28 - [AUDIT] - USER: Admin | ACTION: UPDATE_STOCK | DETAILS: ID: 2 | Var: -50
+2025-12-08 11:46:01 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:53:25 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 11:57:01 - [AUDIT] - USER: Admin | ACTION: LOGOUT | DETAILS: Déconnexion
+2025-12-08 11:58:03 - [AUDIT] - USER: Admin/p | ACTION: REGISTER | DETAILS: New user role: admin
+2025-12-08 11:58:13 - [AUDIT] - USER: Admin/p | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 12:14:05 - [AUDIT] - USER: JOE | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-08 12:14:17 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 12:14:48 - [AUDIT] - USER: JOE | ACTION: PURCHASE | DETAILS: Items: 1
+2025-12-08 12:18:49 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 12:19:16 - [AUDIT] - USER: Admin | ACTION: LOGOUT | DETAILS: Bye
+2025-12-08 12:19:27 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 12:19:42 - [AUDIT] - USER: JOE | ACTION: LOGOUT | DETAILS: Bye
+2025-12-08 12:23:59 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 12:24:29 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 12:26:00 - [AUDIT] - USER: JOE | ACTION: PURCHASE | DETAILS: Items: 2
+2025-12-08 12:26:13 - [AUDIT] - USER: JOE | ACTION: LOGOUT | DETAILS: Bye
+2025-12-08 12:27:54 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 12:28:20 - [AUDIT] - USER: JOE | ACTION: LOGOUT | DETAILS: Bye
+2025-12-08 12:28:31 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 12:38:14 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 12:38:41 - [AUDIT] - USER: Admin | ACTION: LOGOUT | DETAILS: Bye
+2025-12-08 12:38:48 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 12:38:50 - [AUDIT] - USER: JOE | ACTION: LOGOUT | DETAILS: Bye
+2025-12-08 12:39:04 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 12:41:44 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 12:56:57 - [AUDIT] - generated new fontManager
+2025-12-08 12:57:09 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 12:57:43 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 12:57:45 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 12:57:45 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 12:58:39 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 12:58:39 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:01:20 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:01:22 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:01:22 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:01:37 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 13:04:26 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 13:08:51 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 13:09:56 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:09:58 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:09:58 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:13:24 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 13:14:31 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:14:32 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:14:33 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:18:26 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:21:59 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:22:15 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:22:15 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:22:50 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:22:50 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:23:02 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 13:27:19 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:27:21 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:27:21 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:27:40 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 13:31:39 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:32:02 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:32:02 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:33:07 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 13:35:59 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:36:05 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:36:05 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:43:00 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:45:18 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:46:07 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC
+2025-12-08 13:46:15 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:46:15 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:50:15 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 13:50:17 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 13:50:17 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:12:03 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:12:10 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:12:10 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:12:48 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:14:29 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:14:34 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:14:34 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:22:57 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:23:09 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: a
+2025-12-08 20:23:33 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:23:33 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:23:44 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:24:44 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:25:23 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:25:38 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:30:16 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:31:11 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:32:34 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:32:48 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:33:11 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:34:51 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:38:34 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:39:30 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:40:09 - [AUDIT] - USER: PEPITO | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-08 20:40:23 - [AUDIT] - USER: PEPITO | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:40:54 - [AUDIT] - USER: PEPITO | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:41:29 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:41:54 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: Iphone
+2025-12-08 20:42:10 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: MacBook
+2025-12-08 20:42:22 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:42:50 - [AUDIT] - USER: PEPITO | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:43:26 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:43:28 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:43:28 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:44:09 - [AUDIT] - USER: PEPITO | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:44:38 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:44:40 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:44:40 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:51:16 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 20:51:17 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:51:17 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 20:59:14 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 20:59:26 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 21:02:08 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 21:02:20 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 21:11:50 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-08 21:12:01 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 21:12:42 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:12:42 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:13:01 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 21:13:06 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:13:06 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:13:20 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:13:20 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:15:00 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 21:15:02 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:15:02 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:15:15 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:15:15 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:19:40 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 21:19:51 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:19:51 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:24:43 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-08 21:24:44 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-08 21:24:58 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:24:58 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:26:10 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC
+2025-12-08 21:29:06 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-08 21:29:06 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-09 13:58:02 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:00:05 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:07:51 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-09 14:07:58 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-09 14:08:06 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:08:42 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: Iphone 13
+2025-12-09 14:09:35 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-09 14:09:57 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-09 14:10:17 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:10:30 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-09 14:13:13 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:15:50 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:20:36 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:21:13 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC
+2025-12-09 14:22:45 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:23:20 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC2
+2025-12-09 14:28:33 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:39:05 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:43:41 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:44:01 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-09 14:46:34 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-09 14:48:13 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-09 14:49:54 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-09 14:50:51 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-09 14:51:07 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:52:33 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 14:54:05 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-09 15:07:41 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-10 08:15:45 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-10 08:16:06 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-10 08:17:12 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC
+2025-12-10 08:18:23 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-10 08:18:53 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-10 08:19:13 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-10 08:22:15 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-10 08:22:30 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-10 08:22:30 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-10 08:36:20 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-10 08:36:32 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-10 08:38:13 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC
+2025-12-10 08:39:14 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-10 08:40:14 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-10 08:40:31 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-10 08:40:31 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.

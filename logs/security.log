@@ -207,3 +207,8 @@
 2025-12-10 08:40:31 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2025-12-10 08:40:31 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2025-12-10 09:06:36 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-10 10:21:00 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-10 10:21:01 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-10 10:22:01 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC
+2025-12-10 10:24:18 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-10 10:24:18 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.

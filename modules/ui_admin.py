@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
-from modules import data, audit, stats
+from modules import data, audit, stats, security # <--- AJOUT IMPORT SECURITY
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -19,20 +19,14 @@ def _blink_loop(app):
         app.blinker_running = False
         return
 
-    # On inverse l'état
     app.blink_state = not app.blink_state
     
-    # Couleur du clignotement (Alerte Stock Min)
-    # ON = Rouge Foncé (#8b0000)
-    # OFF = Blanc (#ffffff) - Comme demandé pour remplacer le noir
     bg_alert = '#8b0000' if app.blink_state else '#ffffff'
-    fg_alert = 'white' if app.blink_state else 'black' # Texte blanc sur rouge, noir sur blanc
+    fg_alert = 'white' if app.blink_state else 'black' 
 
-    # 1. MISE A JOUR PAGE VISU (NOIRE)
     if hasattr(app, 'tree_visu') and app.tree_visu.winfo_exists():
         app.tree_visu.tag_configure('alert', background=bg_alert, foreground=fg_alert)
 
-    # 2. MISE A JOUR PAGE DASHBOARD (BLANCHE)
     if hasattr(app, 'tree_dash') and app.tree_dash.winfo_exists():
         app.tree_dash.tag_configure('alert', background=bg_alert, foreground=fg_alert)
 
@@ -62,16 +56,60 @@ def show_visu(app):
     app.tree_visu.heading("nom", text="Produit"); app.tree_visu.heading("prix", text="Prix"); app.tree_visu.heading("quantite", text="Stock")
     app.tree_visu.pack(fill="both", expand=True)
     
-    # --- COULEURS ---
-    # RUPTURE (0) : ROUGE CLAIR (#ff4444) - FIXE
+    # RUPTURE (0) : ROUGE CLAIR (#ff4444)
     app.tree_visu.tag_configure('empty', background='#ff4444', foreground='white') 
     
-    # ALERTE (Min) : Sera géré par le clignotement (Rouge Foncé <-> Blanc)
-
-    tk.Button(app, text="🔧 GÉRER STOCKS", command=lambda: show_admin_dash(app), bg="#27ae60", fg="white", font=("Arial", 14), padx=20).pack(pady=20)
-    tk.Button(app, text="Déconnexion", command=app.logout, bg="#c0392b", fg="white").pack(pady=10)
+    # BOUTON BAS
+    bottom = tk.Frame(app, bg="#000000")
+    bottom.pack(pady=20)
+    
+    tk.Button(bottom, text="🔧 GÉRER STOCKS", command=lambda: show_admin_dash(app), bg="#27ae60", fg="white", font=("Arial", 14), padx=20).pack(side="left", padx=10)
+    
+    # BOUTON PROFIL ADMIN
+    tk.Button(bottom, text="👤 PROFIL", command=lambda: open_profile_editor(app), bg="#2980b9", fg="white", font=("Arial", 14)).pack(side="left", padx=10)
+    
+    tk.Button(bottom, text="Déconnexion", command=app.logout, bg="#c0392b", fg="white").pack(side="left", padx=10)
     
     refresh_visu_loop(app)
+
+# --- FONCTION ÉDITION PROFIL ADMIN ---
+def open_profile_editor(app):
+    win = tk.Toplevel(app)
+    win.title("Profil Admin")
+    win.geometry("400x300")
+    
+    tk.Label(win, text="Modifier Accès Admin", font=("Arial", 12, "bold")).pack(pady=10)
+    
+    # 1. PSEUDO (Pré-rempli)
+    tk.Label(win, text="Nom d'utilisateur :").pack(anchor="w", padx=20)
+    e_u = tk.Entry(win, width=30)
+    e_u.insert(0, app.current_user)
+    e_u.pack(pady=5)
+    
+    # 2. MOT DE PASSE (Vide et Visible)
+    tk.Label(win, text="Nouveau Mot de passe (Visible) :").pack(anchor="w", padx=20)
+    e_p = tk.Entry(win, width=30) # Visible
+    e_p.pack(pady=5)
+    
+    def save_profile():
+        new_user = e_u.get()
+        new_pass = e_p.get()
+        
+        if not new_user or not new_pass:
+            messagebox.showwarning("!", "Remplissez tout.", parent=win)
+            return
+            
+        ok, msg = security.update_credentials(app.current_user, new_user, new_pass)
+        
+        if ok:
+            messagebox.showinfo("OK", "Profil mis à jour.\nVeuillez vous reconnecter.", parent=win)
+            win.destroy()
+            app.logout() # DÉCONNEXION
+        else:
+            messagebox.showerror("Erreur", msg, parent=win)
+            
+    tk.Button(win, text="Sauvegarder & Déconnexion", command=save_profile, bg="#27ae60", fg="white").pack(pady=20)
+
 
 def refresh_visu_loop(app):
     if app.current_role != "admin": return
@@ -84,8 +122,8 @@ def refresh_visu_loop(app):
                 q = int(p['quantite'])
                 min_s = int(p.get('min_stock', 10))
                 
-                if q == 0: tag = 'empty'       # Rouge Clair Fixe
-                elif q <= min_s: tag = 'alert' # Clignote (Foncé/Blanc)
+                if q == 0: tag = 'empty'       
+                elif q <= min_s: tag = 'alert' 
                 else: tag = 'ok'
                     
                 app.tree_visu.insert("", "end", values=(p['nom'], p['prix'] + " €", p['quantite']), tags=(tag,))
@@ -105,7 +143,11 @@ def show_admin_dash(app):
     top = tk.Frame(app, bg="#000000", height=60); top.pack(fill="x")
     tk.Button(top, text="⬅ Retour Visu", command=lambda: show_visu(app), bg="#95a5a6", fg="white").pack(side="left", padx=20)
     tk.Label(top, text="GESTION STOCKS", fg="white", bg="#000000", font=("Arial", 12)).pack(side="left")
-    tk.Button(top, text="⚠️ RESET SYSTEM", command=lambda: perform_reset(app), bg="red", fg="white", font=("Arial", 10, "bold")).pack(side="left", padx=30)
+    
+    # BOUTON PROFIL (Ajouté aussi ici)
+    tk.Button(top, text="👤 PROFIL", command=lambda: open_profile_editor(app), bg="#2980b9", fg="white").pack(side="left", padx=10)
+    
+    tk.Button(top, text="⚠️ RESET SYSTEM", command=lambda: perform_reset(app), bg="red", fg="white", font=("Arial", 10, "bold")).pack(side="left", padx=10)
     tk.Button(top, text="💰 CA & Marges", command=show_financials, bg="#27ae60", fg="black").pack(side="right", padx=10)
     tk.Button(top, text="📦 Ventes Produits", command=show_products_sold, bg="#9b5213", fg="white").pack(side="right", padx=10)
 
@@ -123,8 +165,6 @@ def show_admin_dash(app):
     app.tree_dash.heading("max", text="Max"); app.tree_dash.column("max", width=50)
     app.tree_dash.pack(fill="both", expand=True)
     
-    # --- COULEURS ---
-    # RUPTURE (0) : ROUGE CLAIR FIXE
     app.tree_dash.tag_configure('empty', background='#ff4444', foreground='white')
     
     app.tree_dash.bind("<<TreeviewSelect>>", lambda e: on_dash_select(app))

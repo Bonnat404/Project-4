@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-from modules import data, audit
+from modules import data, audit, security # <--- AJOUT IMPORT SECURITY
 
 def show_client_interface(app):
     app.clear()
@@ -13,6 +13,10 @@ def show_client_interface(app):
     top = tk.Frame(app, bg="#000000", height=60)
     top.pack(fill="x")
     tk.Label(top, text=f"👤 {app.current_user}", fg="white", bg="#000000", font=("Arial", 12)).pack(side="left", padx=20)
+    
+    # --- BOUTON PROFIL CLIENT ---
+    tk.Button(top, text="Mon Profil", command=lambda: open_profile_editor(app), bg="#2980b9", fg="white").pack(side="left", padx=5)
+    
     tk.Button(top, text="Déconnexion", command=app.logout, bg="#e74c3c", fg="white").pack(side="right", padx=20)
     
     app.lbl_header_total = tk.Label(top, text="Panier : 0.00 €", fg="#f1c40f", bg="#000000", font=("Arial", 14, "bold"))
@@ -45,6 +49,46 @@ def show_client_interface(app):
     # LANCEMENT DE LA BOUCLE AUTOMATIQUE
     start_auto_refresh(app)
 
+# --- FONCTION ÉDITION PROFIL (User & Mdp Visible) ---
+def open_profile_editor(app):
+    win = tk.Toplevel(app)
+    win.title("Mon Profil Client")
+    win.geometry("400x300")
+    
+    tk.Label(win, text="Modifier mes informations", font=("Arial", 12, "bold")).pack(pady=10)
+    
+    # 1. PSEUDO (Pré-rempli)
+    tk.Label(win, text="Nom d'utilisateur :").pack(anchor="w", padx=20)
+    e_u = tk.Entry(win, width=30)
+    e_u.insert(0, app.current_user) # On écrit le pseudo actuel
+    e_u.pack(pady=5)
+    
+    # 2. MOT DE PASSE (Vide et Visible)
+    tk.Label(win, text="Nouveau Mot de passe (Visible) :").pack(anchor="w", padx=20)
+    e_p = tk.Entry(win, width=30) # Pas de show="*", on voit le texte
+    e_p.pack(pady=5)
+    
+    def save_profile():
+        new_user = e_u.get()
+        new_pass = e_p.get()
+        
+        if not new_user or not new_pass:
+            messagebox.showwarning("!", "Veuillez remplir les deux champs.", parent=win)
+            return
+            
+        # Mise à jour via security.py
+        ok, msg = security.update_credentials(app.current_user, new_user, new_pass)
+        
+        if ok:
+            messagebox.showinfo("Succès", "Profil mis à jour !\nVeuillez vous reconnecter.", parent=win)
+            win.destroy()
+            app.logout() # DÉCONNEXION FORCÉE
+        else:
+            messagebox.showerror("Erreur", msg, parent=win)
+            
+    tk.Button(win, text="Sauvegarder & Déconnexion", command=save_profile, bg="#27ae60", fg="white").pack(pady=20)
+
+
 def update_header_total(app):
     total = 0.0
     all_p = {p['id']: p for p in data.get_products()}
@@ -76,7 +120,7 @@ def build_store_tab(app, parent):
     app.tree_store.column("id", width=50, anchor="center")
     app.tree_store.pack(side="left", fill="both", expand=True, padx=10, pady=10)
     
-    # --- C'EST ICI QUE J'AI MIS LE ROUGE CLAIR (#ff4444) ---
+    # ROUGE CLAIR (#ff4444)
     app.tree_store.tag_configure('rupture', background='#ff4444', foreground='white')
     
     right = tk.Frame(parent, bg="#fff", padx=20, pady=20)
@@ -100,7 +144,6 @@ def refresh_store(app):
     for i in app.tree_store.get_children(): app.tree_store.delete(i)
     
     for p in data.get_products():
-        # Si quantité est 0, on applique le tag 'rupture'
         tag = 'rupture' if int(p['quantite']) == 0 else 'ok'
         item = app.tree_store.insert("", "end", values=(p['id'], p['nom'], p['prix']+" €", p['quantite']), tags=(tag,))
         

@@ -214,3 +214,51 @@
 2025-12-10 10:24:18 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2025-12-10 11:11:02 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
 2025-12-10 11:12:43 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-11 08:39:27 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 08:39:39 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 08:40:38 - [AUDIT] - USER: Admin | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-11 08:41:02 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-11 08:47:44 - [AUDIT] - USER: JOE | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-11 08:47:58 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client
+2025-12-11 08:53:15 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-11 09:07:07 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:07:14 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-11 09:09:16 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:09:32 - [AUDIT] - USER: ADMIN | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:09:44 - [AUDIT] - USER: ADMIN | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:09:54 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin
+2025-12-11 09:11:44 - [AUDIT] - USER: PAT | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-11 09:12:45 - [AUDIT] - USER: PAT | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-11 09:15:34 - [AUDIT] - USER: PAT | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-11 09:34:24 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-11 09:35:26 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-11 09:42:19 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:44:31 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:45:23 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:46:15 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-11 09:46:31 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:46:47 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:48:54 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:49:13 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-11 09:51:10 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:54:16 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 09:57:56 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-11 09:58:30 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-11 09:58:48 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-11 10:14:35 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-11 10:15:24 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 10:15:42 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 10:16:16 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-11 10:18:12 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 10:19:40 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-11 10:20:52 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-11 10:22:51 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-11 10:23:07 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-11 10:31:11 - [AUDIT] - USER: Admin | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-11 10:31:26 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-11 10:31:54 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-11 10:41:17 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-11 10:41:57 - [AUDIT] - USER: JOE | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-11 10:42:11 - [AUDIT] - USER: JOE | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-11 10:42:39 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-11 10:43:08 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok

@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-from modules import data, audit, security # <--- AJOUT IMPORT SECURITY
+from tkinter import font  # <--- AJOUT POUR LE TEXTE BARRÉ
+import re  # <--- AJOUT POUR LES REGEX
+
+from modules import data, audit, security 
 
 def show_client_interface(app):
     app.clear()
@@ -49,33 +52,88 @@ def show_client_interface(app):
     # LANCEMENT DE LA BOUCLE AUTOMATIQUE
     start_auto_refresh(app)
 
-# --- FONCTION ÉDITION PROFIL (User & Mdp Visible) ---
+# --- FONCTION ÉDITION PROFIL (AVEC CHECKLIST DYNAMIQUE) ---
 def open_profile_editor(app):
     win = tk.Toplevel(app)
     win.title("Mon Profil Client")
-    win.geometry("400x300")
+    win.geometry("400x550") # Agrandissement pour contenir les règles
     
+    # Définition des polices (Normal vs Barré)
+    font_normal = font.Font(family="Arial", size=9)
+    font_strike = font.Font(family="Arial", size=9, overstrike=1)
+
     tk.Label(win, text="Modifier mes informations", font=("Arial", 12, "bold")).pack(pady=10)
     
     # 1. PSEUDO (Pré-rempli)
     tk.Label(win, text="Nom d'utilisateur :").pack(anchor="w", padx=20)
     e_u = tk.Entry(win, width=30)
-    e_u.insert(0, app.current_user) # On écrit le pseudo actuel
+    e_u.insert(0, app.current_user)
     e_u.pack(pady=5)
     
-    # 2. MOT DE PASSE (Vide et Visible)
-    tk.Label(win, text="Nouveau Mot de passe (Visible) :").pack(anchor="w", padx=20)
-    e_p = tk.Entry(win, width=30) # Pas de show="*", on voit le texte
+    # 2. MOT DE PASSE
+    tk.Label(win, text="Nouveau Mot de passe :").pack(anchor="w", padx=20)
+    e_p = tk.Entry(win, width=30, show="*") # Masqué
     e_p.pack(pady=5)
+
+    # --- ZONE DES RÈGLES ---
+    f_rules = tk.Frame(win)
+    f_rules.pack(anchor="w", padx=20, pady=5)
     
+    lbl_len = tk.Label(f_rules, text="• 14 caractères minimum", fg="#555", font=font_normal)
+    lbl_len.pack(anchor="w")
+    lbl_let = tk.Label(f_rules, text="• Lettre obligatoire", fg="#555", font=font_normal)
+    lbl_let.pack(anchor="w")
+    lbl_dig = tk.Label(f_rules, text="• Chiffre obligatoire", fg="#555", font=font_normal)
+    lbl_dig.pack(anchor="w")
+    lbl_spe = tk.Label(f_rules, text="• Caractère spécial obligatoire", fg="#555", font=font_normal)
+    lbl_spe.pack(anchor="w")
+
+    # 3. CONFIRMATION
+    tk.Label(win, text="Confirmer le mot de passe :").pack(anchor="w", padx=20)
+    e_conf = tk.Entry(win, width=30, show="*")
+    e_conf.pack(pady=5)
+    
+    # --- LOGIQUE DE RAYAGE DYNAMIQUE ---
+    def check_strength(event=None):
+        pwd = e_p.get()
+        
+        # 1. Longueur
+        if len(pwd) >= 14: lbl_len.config(font=font_strike, fg="#aaa")
+        else: lbl_len.config(font=font_normal, fg="#555")
+
+        # 2. Lettre
+        if re.search(r"[a-zA-Z]", pwd): lbl_let.config(font=font_strike, fg="#aaa")
+        else: lbl_let.config(font=font_normal, fg="#555")
+
+        # 3. Chiffre
+        if re.search(r"\d", pwd): lbl_dig.config(font=font_strike, fg="#aaa")
+        else: lbl_dig.config(font=font_normal, fg="#555")
+
+        # 4. Spécial
+        if re.search(r"[!@#$%^&*(),.?\":{}|<>]", pwd): lbl_spe.config(font=font_strike, fg="#aaa")
+        else: lbl_spe.config(font=font_normal, fg="#555")
+
+    # On attache la vérification à la frappe
+    e_p.bind("<KeyRelease>", check_strength)
+
     def save_profile():
         new_user = e_u.get()
         new_pass = e_p.get()
+        conf_pass = e_conf.get()
         
-        if not new_user or not new_pass:
-            messagebox.showwarning("!", "Veuillez remplir les deux champs.", parent=win)
+        if not new_user or not new_pass or not conf_pass:
+            messagebox.showwarning("!", "Veuillez remplir tous les champs.", parent=win)
             return
             
+        if new_pass != conf_pass:
+            messagebox.showerror("Erreur", "Les mots de passe ne correspondent pas.", parent=win)
+            return
+
+        # Vérification finale stricte avant envoi
+        if not (len(new_pass) >= 14 and re.search(r"[a-zA-Z]", new_pass) and re.search(r"\d", new_pass) and re.search(r"[!@#$%^&*(),.?\":{}|<>]", new_pass)):
+             messagebox.showerror("Sécurité", "Le mot de passe ne respecte pas les critères.", parent=win)
+             return
+
         # Mise à jour via security.py
         ok, msg = security.update_credentials(app.current_user, new_user, new_pass)
         

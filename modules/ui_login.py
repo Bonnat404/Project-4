@@ -1,5 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import font  # Nécessaire pour l'effet barré
+import re  # Nécessaire pour vérifier les caractères (regex)
+
+# Tes modules existants
 import modules.ui_client as ui_client
 import modules.ui_admin as ui_admin
 from modules import security, audit
@@ -120,21 +124,97 @@ def open_change_pw_dialog(app, parent_window, username):
 
     tk.Button(win, text="Valider & Se connecter", command=save_new_pw, bg="#27ae60", fg="white").pack(pady=20)
 
-# --- INSCRIPTION ---
+# --- INSCRIPTION (NOUVELLE VERSION AVEC LISTE DYNAMIQUE) ---
 def show_register_popup(app):
     top = tk.Toplevel(app)
     top.title("Inscription")
-    top.geometry("350x300")
+    top.geometry("400x580") # Agrandissement pour tout contenir
     top.configure(bg="#ecf0f1")
+    
+    # Définition des polices (Normal vs Barré)
+    font_normal = font.Font(family="Arial", size=9)
+    font_strike = font.Font(family="Arial", size=9, overstrike=1) 
+    
     tk.Label(top, text="Créer un compte", font=("Arial", 14, "bold"), bg="#ecf0f1", fg="#2c3e50").pack(pady=15)
-    f_in = tk.Frame(top, bg="#ecf0f1"); f_in.pack(pady=5)
-    tk.Label(f_in, text="Nom d'utilisateur:", bg="#ecf0f1").pack(anchor="w")
-    e_nu = tk.Entry(f_in, width=25, font=("Arial", 11)); e_nu.pack(pady=2)
-    tk.Label(f_in, text="Mot de passe:", bg="#ecf0f1").pack(anchor="w", pady=(10,0))
-    e_np = tk.Entry(f_in, show="*", width=25, font=("Arial", 11)); e_np.pack(pady=2)
+    
+    f_in = tk.Frame(top, bg="#ecf0f1")
+    f_in.pack(pady=5, padx=20, fill="x")
+    
+    # Nom d'utilisateur
+    tk.Label(f_in, text="Nom d'utilisateur:", bg="#ecf0f1", font=("Arial", 10, "bold")).pack(anchor="w")
+    e_nu = tk.Entry(f_in, width=30, font=("Arial", 11)); e_nu.pack(pady=(0, 10), fill="x")
+    
+    # Mot de passe
+    tk.Label(f_in, text="Mot de passe:", bg="#ecf0f1", font=("Arial", 10, "bold")).pack(anchor="w")
+    e_np = tk.Entry(f_in, show="*", width=30, font=("Arial", 11)); e_np.pack(pady=(0, 5), fill="x")
+    
+    # Zone des règles (Les 4 points)
+    f_rules = tk.Frame(f_in, bg="#ecf0f1")
+    f_rules.pack(anchor="w", pady=(0, 10))
+    
+    lbl_len = tk.Label(f_rules, text="• 14 caractères minimum", bg="#ecf0f1", fg="#7f8c8d", font=font_normal)
+    lbl_len.pack(anchor="w")
+    
+    lbl_let = tk.Label(f_rules, text="• Lettre obligatoire", bg="#ecf0f1", fg="#7f8c8d", font=font_normal)
+    lbl_let.pack(anchor="w")
+    
+    lbl_dig = tk.Label(f_rules, text="• Chiffre obligatoire", bg="#ecf0f1", fg="#7f8c8d", font=font_normal)
+    lbl_dig.pack(anchor="w")
+    
+    lbl_spe = tk.Label(f_rules, text="• Caractère spécial obligatoire", bg="#ecf0f1", fg="#7f8c8d", font=font_normal)
+    lbl_spe.pack(anchor="w")
+    
+    # Confirmation
+    tk.Label(f_in, text="Confirmer le mot de passe:", bg="#ecf0f1", font=("Arial", 10, "bold")).pack(anchor="w")
+    e_conf = tk.Entry(f_in, show="*", width=30, font=("Arial", 11)); e_conf.pack(pady=(0, 10), fill="x")
+    
+    # --- LOGIQUE DE RAYAGE DYNAMIQUE ---
+    def check_password_strength(event=None):
+        pwd = e_np.get()
+        
+        # 1. Longueur
+        if len(pwd) >= 14:
+            lbl_len.config(font=font_strike, fg="#bdc3c7")
+        else:
+            lbl_len.config(font=font_normal, fg="#7f8c8d")
+
+        # 2. Lettre
+        if re.search(r"[a-zA-Z]", pwd):
+            lbl_let.config(font=font_strike, fg="#bdc3c7")
+        else:
+            lbl_let.config(font=font_normal, fg="#7f8c8d")
+
+        # 3. Chiffre
+        if re.search(r"\d", pwd):
+            lbl_dig.config(font=font_strike, fg="#bdc3c7")
+        else:
+            lbl_dig.config(font=font_normal, fg="#7f8c8d")
+
+        # 4. Spécial
+        if re.search(r"[!@#$%^&*(),.?\":{}|<>]", pwd):
+            lbl_spe.config(font=font_strike, fg="#bdc3c7")
+        else:
+            lbl_spe.config(font=font_normal, fg="#7f8c8d")
+
+    # On écoute chaque touche
+    e_np.bind("<KeyRelease>", check_password_strength)
+
+    # --- VALIDATION FINALE ---
     def process_reg():
-        u, p = e_nu.get(), e_np.get()
-        if not u or not p: return messagebox.showwarning("!", "Remplissez tout.", parent=top)
+        u = e_nu.get()
+        p = e_np.get()
+        c = e_conf.get()
+        
+        if not u or not p or not c:
+            return messagebox.showwarning("!", "Remplissez tout.", parent=top)
+        
+        if p != c:
+            return messagebox.showerror("Erreur", "Les mots de passe ne correspondent pas.", parent=top)
+
+        # Vérification finale de sécurité (Regex) avant d'envoyer
+        if not (len(p) >= 14 and re.search(r"[a-zA-Z]", p) and re.search(r"\d", p) and re.search(r"[!@#$%^&*(),.?\":{}|<>]", p)):
+             return messagebox.showerror("Sécurité", "Le mot de passe ne respecte pas les critères.", parent=top)
+
         ok, msg = security.register(u, p, "client")
         if ok:
             audit.log_event(u, "REGISTER", "New Client Account")
@@ -143,4 +223,7 @@ def show_register_popup(app):
         else:
             messagebox.showerror("Erreur", msg, parent=top)
             e_np.delete(0, 'end')
+            e_conf.delete(0, 'end')
+            check_password_strength()
+
     tk.Button(top, text="S'INSCRIRE", command=process_reg, bg="#2980b9", fg="white", font=("Arial", 10, "bold"), width=20, pady=5).pack(pady=20)

@@ -262,3 +262,33 @@
 2025-12-11 10:42:11 - [AUDIT] - USER: JOE | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
 2025-12-11 10:42:39 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
 2025-12-11 10:43:08 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-11 10:57:38 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-11 10:58:00 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-11 10:58:19 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-11 11:05:05 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-12 10:18:40 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-12 10:19:15 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-12 10:20:01 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-12 10:20:14 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-12 23:22:06 - [AUDIT] - generated new fontManager
+2025-12-12 23:24:05 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-12 23:24:51 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-13 16:55:39 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-13 16:55:55 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC
+2025-12-13 16:58:16 - [AUDIT] - USER: JOE | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-13 16:58:27 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-13 16:59:03 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-13 16:59:03 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-13 17:01:53 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-13 17:02:19 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-15 16:34:31 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-15 16:37:00 - [AUDIT] - USER: Admin | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-15 16:37:25 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-15 16:38:11 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned
+2025-12-15 16:38:51 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-15 17:28:49 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-15 17:35:05 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-15 17:35:32 - [AUDIT] - USER: JOE | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-15 17:35:44 - [AUDIT] - USER: JOE | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
+2025-12-15 17:36:07 - [AUDIT] - USER: JOE | ACTION: REGISTER | DETAILS: New Client Account
+2025-12-15 17:36:18 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok

@@ -292,3 +292,11 @@
 2025-12-15 17:35:44 - [AUDIT] - USER: JOE | ACTION: LOGIN_FAILED | DETAILS: Bad credentials
 2025-12-15 17:36:07 - [AUDIT] - USER: JOE | ACTION: REGISTER | DETAILS: New Client Account
 2025-12-15 17:36:18 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-17 17:01:54 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-17 17:02:15 - [AUDIT] - USER: Admin | ACTION: ADD_PRODUCT | DETAILS: PC
+2025-12-17 17:03:17 - [AUDIT] - USER: JOE | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: ok
+2025-12-17 17:04:02 - [AUDIT] - USER: Admin | ACTION: LOGIN_SUCCESS | DETAILS: Role: admin | Status: ok
+2025-12-17 17:04:05 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-17 17:04:05 - [AUDIT] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-17 17:04:56 - [AUDIT] - USER: TestFaible | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: weak
+2025-12-17 17:05:24 - [AUDIT] - USER: TestCorrompu | ACTION: LOGIN_SUCCESS | DETAILS: Role: client | Status: pwned

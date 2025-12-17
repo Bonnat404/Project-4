@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements1.txt
+          pip install -r requirements.txt
 
       - name: Install outils ci
         run: |
@@ -36,7 +36,7 @@ jobs:
           # Ceci injecte la clé API pour que 'safety' puisse s'authentifier
           SAFETY_API_KEY: ${{ secrets.SAFETY_API_KEY }}
         run: |  # <--- CORRECTION D'INDENTATION : 'run' est maintenant aligné avec 'env'
-          safety scan -r requirements1.txt
+          safety scan -r requirements.txt
 
       - name: Analyse de code avec Bandit
         run: bandit -r . -q || exit 1

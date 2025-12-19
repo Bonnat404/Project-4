@@ -1,0 +1,10 @@
+﻿requests==2.32.5
+flask==3.0.3
+pandas>=2.2.3
+pytest==7.4.4
+matplotlib>=3.9.0
+
+# pip freeze
+# pip freeze > requirements2.txt
+# pip install safety
+# 

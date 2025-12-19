@@ -35,7 +35,7 @@ jobs:
         env:
           # Ceci injecte la clé API pour que 'safety' puisse s'authentifier
           SAFETY_API_KEY: ${{ secrets.SAFETY_API_KEY }}
-        run: |  # <--- CORRECTION D'INDENTATION : 'run' est maintenant aligné avec 'env'
+        run: |
           safety scan -r requirements.txt
 
       - name: Analyse de code avec Bandit
@@ -50,8 +50,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0 
+
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v6
+        uses: SonarSource/sonarqube-scan-action@v5
+        with:
+          # On force les bons paramètres ici pour écraser l'ancien nom "Alcin"
+          args: >
+            -Dsonar.projectKey=Bonnat404_Project-4
+            -Dsonar.organization=bonnat404
+            -Dsonar.sources=.
+            -Dsonar.verbose=true
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
